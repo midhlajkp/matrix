@@ -1,0 +1,29 @@
+func main() -> Int {
+    let a: [[Int]] = nil
+    var m: Int
+    var n: Int
+    var i: Int
+    var j: Int
+    var value: Int
+    var temp: Int
+    print("Enter number of rows and columns:")
+    scanf("%d\t%d", &m, &n)
+    a[0][0] = 1
+    a[m - 1][n - 1] = m * n
+    value = 2
+    for i in 1..<m {
+        temp = i
+        for j in 0...i {
+            a[temp][j] = value
+            temp -= 1
+            value += 1
+        }
+    }
+    print("Matrix\n")
+    for i in 0..<m {
+        for j in 0..<n {
+            print("\(a[i][j])\t")
+        }
+        print("\n")
+    }
+}
